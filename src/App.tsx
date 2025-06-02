@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-50">
-        <h1 className='text-3xl font-bold text-center'> Tienda de productos Fake</h1>
+        <Navbar />
         <main>
           <Routes>
 
