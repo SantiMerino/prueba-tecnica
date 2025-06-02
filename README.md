@@ -26,26 +26,6 @@ This project is a technical test implementing an e-commerce application with Rea
 - Node.js (v14 or higher recommended)
 - npm or yarn
 
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/your-username/shop-zen.git
-cd shop-zen
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-The application will be available at `http://localhost:5173` (or the port shown in your terminal).
-
 ## Project Structure
 
 - `/src/components/ui` - Reusable UI components
