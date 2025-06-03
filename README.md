@@ -28,7 +28,7 @@ This project is a technical test implementing an e-commerce application with Rea
 
 ## Project Structure
 
-- `/src/components/ui` - Reusable UI components
+- `/src/components` - Reusable UI components
 - `/src/pages` - Page components for different routes
 - `/src/hooks` - Custom React hooks
 - `/src/services` - API services
@@ -39,14 +39,6 @@ This project is a technical test implementing an e-commerce application with Rea
 This project uses the Fake Store API:
 - Products list: https://fakestoreapi.com/products
 - Product detail: https://fakestoreapi.com/products/:id
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
