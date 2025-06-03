@@ -29,17 +29,20 @@ This project is a technical test implementing an e-commerce application with Rea
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/your-username/shop-zen.git
 cd shop-zen
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -48,7 +51,7 @@ The application will be available at `http://localhost:5173` (or the port shown 
 
 ## Project Structure
 
-- `/src/components/ui` - Reusable UI components
+- `/src/components` - Reusable UI components
 - `/src/pages` - Page components for different routes
 - `/src/hooks` - Custom React hooks
 - `/src/services` - API services
@@ -57,6 +60,7 @@ The application will be available at `http://localhost:5173` (or the port shown 
 ## API
 
 This project uses the Fake Store API:
+
 - Products list: https://fakestoreapi.com/products
 - Product detail: https://fakestoreapi.com/products/:id
 
