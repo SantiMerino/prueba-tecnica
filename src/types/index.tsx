@@ -1,5 +1,5 @@
 
-// ! tipo del producto fakeproducts...
+// Product interface from API
 export interface Product {
     id: number;
     title: string;
@@ -12,3 +12,14 @@ export interface Product {
         count: number;
     };
 }
+
+// Order for products 
+export interface FavoriteProduct extends Product {
+  addedAt: number;
+}
+
+// Favorite & recent view typing
+export type ProductsState = {
+  viewed: FavoriteProduct[];
+  favorites: FavoriteProduct[];
+};
