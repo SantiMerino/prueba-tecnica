@@ -1,32 +1,25 @@
 import { Link } from 'react-router-dom';
-import { Heart } from 'lucide-react';
+import { Bookmark } from 'lucide-react';
 import { Product } from '../types';
 
 // interface with the props 
 interface ProductCardProps {
     product: Product;
+    isFavorite: boolean;
+    onToggleFavorite: (product: Product) => void;
 }
 
-// Plain data for the construction of the card
-// const product = {
-//     id: 1,
-//     title: 'product',
-//     category: 'ropa',
-//     image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-//     price: 19.99,
-//     description: 'description',
-//     rating: 4.5,
-// }
-
-const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ product, isFavorite, onToggleFavorite }) => {
     return (
-        <div className="    bg-white rounded-lg shadow-md transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+        <div className="    bg-white rounded-lg shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg hover:scale-105">
             <div className="relative pb-[100%] overflow-hidden">
-                <img
-                    src={product.image}
-                    alt={product.title}
-                    className="absolute inset-0 w-full h-full object-contain p-4"
-                />
+                <Link to={`/producto/${product.id}`}>
+                    <img
+                        src={product.image}
+                        alt={product.title}
+                        className="absolute inset-0 w-full h-full object-contain p-4"
+                    /></Link>
             </div>
 
             <div className="p-4">
@@ -39,21 +32,26 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
                         {product.title}
                     </Link>
                     <button
-                        className="ml-2 flex-shrink-0 text-gray-400 hover:text-red-500 focus:outline-none transition-colors duration-200"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            onToggleFavorite(product);
+                        }}
+                        className="ml-2 flex-shrink-0 text-yellow-400 hover:text-yellow-300 focus:outline-none transition-colors duration-200"
 
                     >
-                        <Heart className={`h-5 w-5 `} />
+                        <Bookmark className={`h-5 w-5 ${isFavorite ? 'fill-yellow-400' : ''}`} />
                     </button>
                 </div>
 
                 <div className="mt-2 flex justify-between items-center">
                     <p className="text-lg font-bold text-gray-900">${product.price.toFixed(2)}</p>
-                    <span className="text-xs px-2 py-1 bg-emerald-700 rounded-full text-white">
+                    <span className="text-xs px-2 py-1 bg-inherit border-gray-300 border-2 rounded-full text-gray-700">
                         {product.category}
                     </span>
                 </div>
             </div>
         </div>
+
     );
 };
 

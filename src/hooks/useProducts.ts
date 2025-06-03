@@ -59,6 +59,7 @@ export const useProducts = () => {
     });
   }, [setProductsState]);
 
+ // Verificar si un producto es favorito
   const isProductFavorite = useCallback((productId: number) => {
     return productsState.favorites.some((p) => p.id === productId);
   }, [productsState.favorites]);
@@ -78,11 +79,13 @@ export const useProducts = () => {
     }));
   }, [setProductsState]);
 
-  // Limpiar TODO (favoritos + vistos recientemente)
+  // Limpiar TODO favoritos + vistos recientemente
   const clearAll = useCallback(() => {
     setProductsState(initialState);
   }, [setProductsState]);
 
+
+   // Retornar todo lo que necesita el componente
   return {
     viewed: productsState.viewed,
     favorites: productsState.favorites,
