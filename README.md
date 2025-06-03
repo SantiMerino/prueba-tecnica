@@ -31,7 +31,7 @@ This project is a technical test implementing an e-commerce application with Rea
 1. Clone the repository:
 
 ```bash
-git clone [https://github.com/your-username/s.git](https://github.com/SantiMerino/prueba-tecnica)
+git clone https://github.com/SantiMerino/prueba-tecnica
 cd project
 ```
 
