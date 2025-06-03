@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Star, Heart } from 'lucide-react';
+import { ArrowLeft, Bookmark, Star } from 'lucide-react';
 import { fetchProductById } from '../services/api';
 import { Product } from '../types';
+import { useProducts } from '../hooks/useProducts';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams<{ id: string }>();
     const [product, setProduct] = useState<Product | null>(null);
     const [error, setError] = useState<string | null>(null);
+    const { addToViewed, toggleFavorite, isProductFavorite } = useProducts();
 
     useEffect(() => {
         const getProduct = async () => {
@@ -20,6 +22,7 @@ const ProductDetail: React.FC = () => {
 
                 if (data) {
                     setProduct(data);
+                    addToViewed(data);
                 } else {
                     setError('Product not found');
                 }
@@ -73,11 +76,12 @@ const ProductDetail: React.FC = () => {
                             </div>
 
                             <button
-
-                                className="flex-shrink-0 text-gray-400 hover:text-red-500 focus:outline-none transition-colors duration-200"
-
-                            >
-                                <Heart className={`h-6 w-6`} />
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    toggleFavorite(product);
+                                }}
+                                className="flex-shrink-0 text-gray-400 hover:text-red-500 focus:outline-none transition-colors duration-200">
+                                <Bookmark className={`h-5 w-5 ${isProductFavorite(product.id) ? 'text-yellow-500 fill-yellow-500 ' : ' '}`} />
                             </button>
                         </div>
 
@@ -106,7 +110,7 @@ const ProductDetail: React.FC = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
