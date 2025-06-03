@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { fetchProducts } from '../services/api';
 import ProductCard from '../components/ProductCard';
+import { useProducts } from '../hooks/useProducts';
 
 import { Product } from '../types';
 
 const ProductListPage: React.FC = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const { toggleFavorite, isProductFavorite } = useProducts();
+
 
     useEffect(() => {
         const getProducts = async () => {
@@ -40,6 +43,8 @@ const ProductListPage: React.FC = () => {
                     <ProductCard
                         key={product.id}
                         product={product}
+                        isFavorite={isProductFavorite(product.id)}
+                        onToggleFavorite={toggleFavorite}
                     />
                 ))}
             </div>
