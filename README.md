@@ -26,6 +26,7 @@ This project is a technical test implementing an e-commerce application with Rea
 - Node.js (v14 or higher recommended)
 - npm or yarn
 
+
 ### Installation
 
 1. Clone the repository:
@@ -49,6 +50,7 @@ npm run dev
 
 The application will be available at `http://localhost:5173` (or the port shown in your terminal).
 
+
 ## Project Structure
 
 - `/src/components` - Reusable UI components
@@ -63,14 +65,6 @@ This project uses the Fake Store API:
 
 - Products list: https://fakestoreapi.com/products
 - Product detail: https://fakestoreapi.com/products/:id
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## License
 
