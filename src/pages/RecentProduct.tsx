@@ -24,7 +24,7 @@ const RecentlyViewedPage: React.FC = () => {
             {viewed.length === 0 ? (
                 <div className='flex items-center justify-center h-auto'>
                     <History className="h-6 w-6 mr-2 text-red-500" />
-                    <h1 className="text-2xl font-bold text-gray-500">Seems like you haven't seen any product +  {viewed.length}</h1>
+                    <h1 className="text-2xl font-bold text-gray-500">Seems like you haven't seen any product</h1>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
